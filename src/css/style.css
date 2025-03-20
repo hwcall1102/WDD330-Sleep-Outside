@@ -185,13 +185,12 @@ button {
 
 /* Start cart list card styles */
 .cart-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1em 1em 1em 1em 1em;
   max-height: 120px;
   position: relative;
   padding-right: 15px;
-  gap: 65px;
 }
 
 .cart-card__image {
@@ -232,6 +231,8 @@ button {
   border: none;
   background: none;
   transition: transform 0.2s ease;
+  grid-column: 3/4;
+  grid-row: 1;
 }
 
 .remove-item:hover {
