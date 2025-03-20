@@ -54,4 +54,25 @@ qs(".product-list").addEventListener("click", (event) => {
   }
 });
 
+function calculateCartTotal() {
+  const cartItems = getLocalStorage("so-cart") || [];
+  if (cartItems.length === 0) {
+    return null;
+  }
+
+  let total = 0;
+  cartItems.forEach((item) => {
+    if (item != null) {
+      total += item.FinalPrice;
+    }
+  });
+  return total;
+}
+
+const cartTotal = calculateCartTotal();
+if (cartTotal !== 0) {
+  document.querySelector(".cart-total").innerHTML =
+    `<p>Total: $${cartTotal}</p>`;
+}
+
 renderCartContents();
