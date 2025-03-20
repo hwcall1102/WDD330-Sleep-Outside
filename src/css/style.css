@@ -124,7 +124,7 @@ button {
   columns: 4;
   column-gap: 1rem;
   list-style-type: none;
-  text-align: center;;
+  text-align: center;
 }
 
 .product-grid a {
