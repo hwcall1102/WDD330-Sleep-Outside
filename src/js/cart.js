@@ -51,6 +51,7 @@ qs(".product-list").addEventListener("click", (event) => {
   if (event.target.classList.contains("remove-item")) {
     const itemIndex = parseInt(event.target.dataset.index, 10);
     removeFromCart(itemIndex);
+    location.reload();
   }
 });
 
