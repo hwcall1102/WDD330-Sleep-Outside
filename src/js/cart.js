@@ -58,7 +58,7 @@ qs(".product-list").addEventListener("click", (event) => {
 function calculateCartTotal() {
   const cartItems = getLocalStorage("so-cart") || [];
   if (cartItems.length === 0) {
-    return none;
+    return ;
   }
 
   let total = 0;
@@ -73,7 +73,7 @@ function calculateCartTotal() {
 const cartTotal = calculateCartTotal();
 if (cartTotal !== 0) {
   document.querySelector(".cart-total").innerHTML =
-    `<p>Total: $${cartTotal}</p>`;
+    `<p>Total: $${cartTotal.toFixed(2)}</p>`;
 }
 
 renderCartContents();
