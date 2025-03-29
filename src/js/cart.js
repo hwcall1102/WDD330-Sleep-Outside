@@ -58,7 +58,7 @@ qs(".product-list").addEventListener("click", (event) => {
 function calculateCartTotal() {
   const cartItems = getLocalStorage("so-cart") || [];
   if (cartItems.length === 0) {
-    return null;
+    return none;
   }
 
   let total = 0;
