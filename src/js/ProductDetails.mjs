@@ -34,13 +34,11 @@ export default class ProductDetails {
     // Attach event listener to manually added button
     setTimeout(() => {
       const addToCartButton = document.getElementById("addToCart");
-      
-      if (!addToCartButton) {
-        return;
+  
+      if (addToCartButton) {
+        addToCartButton.disabled = false; // Enable the button
+        addToCartButton.addEventListener("click", this.addToCart.bind(this));
       }
-
-      addToCartButton.addEventListener("click", this.addToCart.bind(this));
-
     }, 100);
   }
 
@@ -51,7 +49,7 @@ export default class ProductDetails {
     if (!Array.isArray(cartItems)) {
       cartItems = [];
     }
-
+    
     // Add new product
     cartItems.push(this.product);
 
